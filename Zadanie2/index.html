@@ -1,0 +1,22 @@
+<html>
+    <body onload="init()">
+        
+        <div id="table"></div>
+        <select onchange="viewModel.setSize(this.value)">
+  <option value="5">5</option>
+  <option value="20">20</option>
+  <option value="40">40</option>
+</select>
+        <button onclick="viewModel.prev()">PREV</button>
+        <button onclick="viewModel.next()">NEXT</button>
+        
+        <script type="application/javascript" src="scripts/DATA.js"></script>
+        <script type="application/javascript" src="scripts/ListOfPeople.js"></script>
+        <script type="application/javascript" src="scripts/Person.js"></script>
+        <script type="application/javascript" src="scripts/Comparators.js"></script>
+        <script type="application/javascript" src="scripts/PeopleTableViewModel.js"></script>
+        <script type="application/javascript" src="scripts/scripts.js"></script>
+
+
+    </body>
+</html>
