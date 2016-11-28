@@ -38,7 +38,6 @@ function PeopleTableViewModel(config){
             }
             self.context.innerHTML=self.people.toTable();
             
-          //  alert('kliknąłeś następny');
         }
         self.prev = function(){
             self.people.clear();
@@ -49,12 +48,15 @@ function PeopleTableViewModel(config){
             var end = (self.currentPage+1)*self.pageSize;
             getData(begin,end);
             self.context.innerHTML=self.people.toTable();
-          //  alert('kliknąłeś poprzedni');
         }
+        
+        
         self.sort = function(comparer){
             data.sort(comparer);
+            comparator.change();
             self.currentPage=0;
             self.next();
+
         }
     
 }

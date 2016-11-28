@@ -8,8 +8,10 @@ function Person(json){
     self.email = json.email;
     self.age = json.age;
     
-    self.toTableRow = function(){
+    self.toTableRow = function(licznik){
         return '<tr><td>'
+            +licznik
+            +'</td><td>'
             +self.id
             +'</td><td>'
             +self.name
@@ -23,7 +25,7 @@ function Person(json){
             +self.email
             +'</td><td>'
             +self.age
-            +'</td></tr>'
+            +'</td></td>'
         
     }
     
