@@ -74,26 +74,15 @@ export class AppComponent {
     selectedPerson: Person=this.person;
 
     licznik(person:Person): void{
+      if(person.like==0)
+      {
         person.like++;
+      }
      }
 
     onSelect(person: Person): void {
        this.selectedPerson = person;
   }
-    
-    /*sort(): void{
-
-      while(best){
-       for (var i = 1; i < this.persons.length-1; i++) {
-         var best=0;
-              	if(this.persons[i].like <= this.persons[best].like) { 
-                    best = i; 
-                }
-       }
-      console.log(this.persons[best]);
-
-     }
-    }*/
 
       onSort():void{
     function compare(a,b) {
@@ -118,12 +107,12 @@ const PERSONS: Person[] = [
   { id: 2, name: 'Emlkeł', like:0 },
   { id: 3, name: 'Faciolubski', like:0 },
   { id: 4, name: 'Cyrano', like:0 },
-  { id: 5, name: 'Góra kup kup', like:0 },
+  { id: 5, name: 'Patryś', like:0 },
   { id: 6, name: 'Wojti', like:0 },
   { id: 7, name: 'Steve', like:0 },
   { id: 8, name: 'Axel', like:0 },
   { id: 9, name: 'Guseppe', like:0 },
-  { id: 10, name: 'Siku musze robić', like:0 }
+  { id: 10, name: 'Maciuś', like:0 }
 ];
 
 
