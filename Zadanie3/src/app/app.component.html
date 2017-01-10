@@ -1,3 +1,19 @@
-<h1>
-  {{title}}
-</h1>
+<div *ngIf="selectedPerson">
+<h2>Wybrałeś osobę: {{selectedPerson.name}}</h2>
+<div><label>id: </label>{{selectedPerson.id}}</div>
+<div>
+    <label>like: </label>{{selectedPerson.like}}
+</div>
+<div>
+    <label>name: </label>
+    <input [(ngModel)]="selectedPerson.name" placeholder="name"/>
+</div>
+</div>
+<h2>List of person</h2>
+<ul class="persons">
+  <li *ngFor="let person of persons" (click)="onSelect(person)"> 
+    <span class="badge">{{person.id}}</span> {{person.name}}
+    <button class="button" (click)="licznik(selectedPerson)">LIKE</button>
+  </li>
+    <button class="sort" (click)="onSort()">Kto ma najwięcej lajkow</button>
+</ul>
