@@ -6,14 +6,22 @@
 </div>
 <div>
     <label>name: </label>
-    <input [(ngModel)]="selectedPerson.name" placeholder="name"/>
+    <input [(ngModel)]="selectedPerson.name" placeholder="name"/><br />
+    <label>surname: </label>
+    <input [(ngModel)]="selectedPerson.surname" placeholder="surname"/>
 </div>
 </div>
 <h2>List of person</h2>
 <ul class="persons">
   <li *ngFor="let person of persons" (click)="onSelect(person)"> 
     <span class="badge">{{person.id}}</span> {{person.name}}
-    <button class="button" (click)="licznik(selectedPerson)">LIKE</button>
+        <div *ngIf="selectedPerson" class="like">
+            <button class="button" (click)="licznik(selectedPerson)">LIKE</button>
+        </div>
   </li>
-    <button class="sort" (click)="onSort()">Kto ma najwięcej lajkow</button>
+    <button class="sort" (click)="onSort()">Kto ma najwięcej lajkow</button>    
 </ul>
+<button (click)="showForm()">Dodaj osobę</button>
+<my-dashboard *ngIf="isForm<0" (addToList)="addPerson($event)"></my-dashboard>
+
+  

@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+//import { Person } from './person';
+//import { PersonService } from './person.service';
+//import { PERSONS } from './mock-persons';
+
 
 @Component({
   selector: 'app-root',
@@ -18,6 +22,13 @@ import { Component } from '@angular/core';
     text-decoration: none;
     font-size: 16px;
     float:right;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.like {
+    float: right;
+    left: 60px;
+    position: relative;
 }
   .persons {
     margin: 0 0 2em 0;
@@ -62,29 +73,44 @@ import { Component } from '@angular/core';
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-`]
-
+`],
+  //providers: [PersonService]
 
 })
 export class AppComponent {
 
     title = 'List of people';
-    persons = PERSONS;
-    person: Person = {id: 1,name: 'Windstorm', like:0};
-    selectedPerson: Person=this.person;
+    persons:Person[] =  [
+  { id: 1, name: 'Misiałkeł', surname: 'hodor', like:0 },
+  { id: 2, name: 'Emlkeł',surname: 'koks', like:0 },
+  { id: 3, name: 'Faciolubski',surname: 'gok', like:0 },
+  { id: 4, name: 'Cyrano',surname: 'koka', like:0 },
+  { id: 5, name: 'Patryś',surname: 'foka', like:0 },
+  { id: 6, name: 'Wojti',surname: 'smok', like:0 },
+  { id: 7, name: 'Steve',surname: 'rok', like:0 },
+  { id: 8, name: 'Axel',surname: 'tłok', like:0 },
+  { id: 9, name: 'Guseppe',surname: 'lok', like:0 },
+  { id: 10, name: 'Maciuś',surname: 'zbok', like:0 }
+];
+    isForm: number = 1;
+    person: Person = {id: 1,name: '',surname: '', like:0};
+    selectedPerson: Person= this.person;
 
-    licznik(person:Person): void{
+  licznik(person:Person): void{
       if(person.like==0)
       {
         person.like++;
       }
      }
 
-    onSelect(person: Person): void {
+  onSelect(person: Person): void {
        this.selectedPerson = person;
   }
+  showForm(): void{
+    this.isForm*=-1;
+  }
 
-      onSort():void{
+  onSort():void{
     function compare(a,b) {
       if (a.like < b.like)
         return 1;
@@ -93,27 +119,31 @@ export class AppComponent {
       return 0;
     }
 
-    PERSONS.sort(compare);
+    this.persons.sort(compare);
   }
-  
+    addPerson(event):void{
+		this.persons.push(new Person(this.persons.length+1,event.osoba.name, event.osoba.surname));
+			console.log(event);
+		//	this.clearData();
+	}
 }
+
 export class Person {
   id: number;
-  name: string;  
+  name: string; 
+  surname: string; 
   like: number;
+
+  constructor (id, name, surname){
+    this.id = id;
+    this.name = name;
+    this.surname = surname;
+    this.like = 0;
+  }
 }
-const PERSONS: Person[] = [
-  { id: 1, name: 'Misiałkeł', like:0 },
-  { id: 2, name: 'Emlkeł', like:0 },
-  { id: 3, name: 'Faciolubski', like:0 },
-  { id: 4, name: 'Cyrano', like:0 },
-  { id: 5, name: 'Patryś', like:0 },
-  { id: 6, name: 'Wojti', like:0 },
-  { id: 7, name: 'Steve', like:0 },
-  { id: 8, name: 'Axel', like:0 },
-  { id: 9, name: 'Guseppe', like:0 },
-  { id: 10, name: 'Maciuś', like:0 }
-];
+
+
+
 
 
 
