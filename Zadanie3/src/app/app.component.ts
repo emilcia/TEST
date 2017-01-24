@@ -81,16 +81,16 @@ export class AppComponent {
 
     title = 'List of people';
     persons:Person[] =  [
-  { id: 1, name: 'Misiałkeł', surname: 'hodor', like:0 },
-  { id: 2, name: 'Emlkeł',surname: 'koks', like:0 },
-  { id: 3, name: 'Faciolubski',surname: 'gok', like:0 },
-  { id: 4, name: 'Cyrano',surname: 'koka', like:0 },
-  { id: 5, name: 'Patryś',surname: 'foka', like:0 },
-  { id: 6, name: 'Wojti',surname: 'smok', like:0 },
-  { id: 7, name: 'Steve',surname: 'rok', like:0 },
-  { id: 8, name: 'Axel',surname: 'tłok', like:0 },
-  { id: 9, name: 'Guseppe',surname: 'lok', like:0 },
-  { id: 10, name: 'Maciuś',surname: 'zbok', like:0 }
+  { id: 1, name: 'Misiałkeł', surname: 'Misiałkowski', like:0 },
+  { id: 2, name: 'Emlkeł',surname: 'Emilkowska', like:0 },
+  { id: 3, name: 'Stefan',surname: 'Faciolubski', like:0 },
+  { id: 4, name: 'Cyrano',surname: 'Morena', like:0 },
+  { id: 5, name: 'Patryś',surname: 'Tartak', like:0 },
+  { id: 6, name: 'Wojti',surname: 'Alpejski', like:0 },
+  { id: 7, name: 'Steve',surname: 'Minecraft', like:0 },
+  { id: 8, name: 'Axel',surname: 'Frog', like:0 },
+  { id: 9, name: 'Guseppe',surname: 'Verdi', like:0 },
+  { id: 10, name: 'Maciuś',surname: 'Zbok', like:0 }
 ];
     isForm: number = 1;
     person: Person = {id: 1,name: '',surname: '', like:0};

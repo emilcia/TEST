@@ -1,5 +1,5 @@
 <div>
-<h1>kupa</h1>
+<h1>Dodaj Osobę</h1>
 <form [formGroup]="form" (ngSubmit)="addPerson()">
       <label>Imię: </label>
       <input formControlName="name" placeholder="Name" id="name" ><br>
@@ -7,14 +7,14 @@
       <div class="error">
             <strong>Login jest niepoprawny!</strong>
       </div>
-</div>
+</div><br>
       <label>Nazwisko: </label>
       <input formControlName="surname" placeholder="Surname">
             <div *ngIf="!form.controls['surname'].valid">
       <div class="error">
             <strong>Nazwisko jest wymagane!</strong>
       </div>
-</div>
+</div><br>
       <button type="submit">Submit</button>
 
 </form>
